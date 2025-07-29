@@ -19,7 +19,7 @@ async function connectToMongoDB() {
             useUnifiedTopology: true,
             useNewUrlParser: true,
 
-        }).then(m => console.log("Connected to MOngoDB"))
+        }).then(m => console.log("Connected to mongoDB"))
         .catch(error => console.log("Error connecting to MongoDB", error))
     }
     cached.conn = await cached.promise;
