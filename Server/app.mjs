@@ -1,9 +1,13 @@
 import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import cors from 'cors';
 
+import connectToDatabase from './lib/mongoDB.mjs';
+connectToDatabase()
 
-dotenv.config();
+
 
 const app = express();
 const PORT = 4000;
