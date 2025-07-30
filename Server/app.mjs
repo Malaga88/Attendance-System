@@ -4,6 +4,9 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 
+import attendanceRouter from './routes/attendanceRoute.mjs';
+import router from './routes/authRoute.mjs';
+
 import connectToDatabase from './lib/mongoDB.mjs';
 connectToDatabase()
 
@@ -24,7 +27,8 @@ app.get("/", (req, res) =>{
     res.send("Hello World");
 });
 
-app.use('/api/auth/', router);
+app.use('/api/auth/', authRouter);
+app.use('/api/attendance/', attendanceRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`); 
