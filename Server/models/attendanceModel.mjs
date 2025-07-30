@@ -6,11 +6,6 @@ const AttendanceSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    date: {
-        type: Date,
-        required: true,
-        default: Date.now
-    },
     course: {
         type: String,
         required: true,
@@ -21,6 +16,11 @@ const AttendanceSchema = new mongoose.Schema({
         required: true,
         enum: ['present', 'absent', 'late'],
         default: 'present'
+    },
+    Date: {
+        type: Date,
+        required: true,
+        default: Date.now
     }
 });
 
