@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const AttendanceSchema = new mongoose.Schema({
-    userId: {
+    Id: {
         type: String,
         required: true,
         trim: true
@@ -10,6 +10,11 @@ const AttendanceSchema = new mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now
+    },
+    course: {
+        type: String,
+        required: true,
+        trim: true
     },
     status: {
         type: String,

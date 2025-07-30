@@ -16,6 +16,17 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
         trim: true
+    },
+    role: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true
+    },
+    Course: {
+        type: String,
+        required: true,
+        trim: true
     }
 });
 
