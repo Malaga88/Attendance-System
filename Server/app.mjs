@@ -9,9 +9,6 @@ connectToDatabase()
 
 import { registerStudent } from './controllers/authController.mjs';
 
-
-
-
 const app = express();
 const PORT = 3000;
 
@@ -20,14 +17,14 @@ app.use(cors({
     credentials: true,
     method: ['GET', 'POST', 'PUT', 'DELETE']
 }));
+
 app.use(express.json());
 
 app.get("/", (req, res) =>{
     res.send("Hello World");
 });
 
-app.post('/api/auth/register', registerStudent);
-
+app.use('/api/auth/', router);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`); 
